@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   amster:
   - apiVersion: v1
-    created: 2018-09-16T10:13:11.8258918+10:00
+    created: 2018-09-16T10:17:53.1074808+10:00
     description: Installs / Configures OpenAM using Amster
     digest: 0704478f2f1ad523de24bbb08591f6011be6c6dc12b5480c9ab10597c0c936ac
     name: amster
@@ -11,7 +11,7 @@ entries:
     version: 5.5.0-ob
   cmp-am-dj:
   - apiVersion: v1
-    created: 2018-09-16T10:13:11.8297987+10:00
+    created: 2018-09-16T10:17:53.1104089+10:00
     description: Composite Helm Chart that deploys OpenAM, and DJ instances for CTS,
       Config store and userstore
     digest: d63dc902c617fe46de4b58e986b7dfb9f2409759a4a0e491916ad66be7e90e1b
@@ -21,7 +21,7 @@ entries:
     version: 5.5.0-ob
   frcommon:
   - apiVersion: v1
-    created: 2018-09-16T10:13:11.8297987+10:00
+    created: 2018-09-16T10:17:53.1113857+10:00
     description: A common ForgeRock chart. This contains utility template functions
       used by other charts.
     digest: b898fc16f751833fd3ba2dc3b8a539bcf5bd27a5abb1c203633d0d29b6feddf9
@@ -30,7 +30,7 @@ entries:
     - https://charts.darkedges.com/frcommon-5.5.0-ob.tgz
     version: 5.5.0-ob
   openam:
-  - created: 2018-09-16T10:13:11.8317509+10:00
+  - created: 2018-09-16T10:17:53.1123613+10:00
     description: OpenAM runtime image - this does not do installation
     digest: 5cfff63399a35ccb7d3784eb4ae4227c08373c9e06388bd1113b0047d65cf65e
     name: openam
@@ -39,11 +39,11 @@ entries:
     version: 5.5.0-ob
   opendj:
   - apiVersion: v1
-    created: 2018-09-16T10:13:11.8337036+10:00
+    created: 2018-09-16T10:17:53.1133378+10:00
     description: Deploy a pair of OpenDJ servers replicated
     digest: bf90e1d85ca42872c927a32e179e9da7e944bacb5fe94b39c93fa12a8274d8d1
     name: opendj
     urls:
     - https://charts.darkedges.com/opendj-5.5.0-ob.tgz
     version: 5.5.0-ob
-generated: 2018-09-16T10:13:11.8249158+10:00
+generated: 2018-09-16T10:17:53.1065046+10:00
