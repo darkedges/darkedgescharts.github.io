@@ -97,7 +97,7 @@
 </head>
 
 <body>
-  <pre>helm repo add errm <%= REPO_URL %></pre>
+  <pre>helm repo add forgerock-ob <%= REPO_URL %></pre>
   <main>
 <% Chart.all.each do |chart| %>
     <div class="chart">
@@ -108,7 +108,7 @@
       <div class="description">
         <p><%= chart.description %></p>
         <pre>helm repo update
-helm install forgerock/<%= chart.name %></pre>
+helm install forgerock-ob/<%= chart.name %></pre>
         <% if chart.home %><p><a href="<%= chart.home %>"><%= chart.home %></a></p><% end %>
       </div>
     </div>
