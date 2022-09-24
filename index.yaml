@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   amster:
   - apiVersion: v1
-    created: 2018-09-19T07:49:53.5883298+10:00
+    created: "2022-09-24T22:15:34.3464932+10:00"
     description: Installs / Configures OpenAM using Amster
     digest: 0704478f2f1ad523de24bbb08591f6011be6c6dc12b5480c9ab10597c0c936ac
     name: amster
@@ -11,7 +11,26 @@ entries:
     version: 5.5.0-ob
   cmp-am-dj:
   - apiVersion: v1
-    created: 2018-09-19T07:49:53.5912736+10:00
+    created: "2022-09-24T22:15:34.3485929+10:00"
+    dependencies:
+    - name: openam
+      repository: file://../openam
+      version: 5.5.0-ob
+    - name: amster
+      repository: file://../amster
+      version: 5.5.0-ob
+    - alias: userstore
+      name: opendj
+      repository: file://../opendj
+      version: 5.5.0-ob
+    - alias: ctsstore
+      name: opendj
+      repository: file://../opendj
+      version: 5.5.0-ob
+    - alias: configstore
+      name: opendj
+      repository: file://../opendj
+      version: 5.5.0-ob
     description: Composite Helm Chart that deploys OpenAM, and DJ instances for CTS,
       Config store and userstore
     digest: d63dc902c617fe46de4b58e986b7dfb9f2409759a4a0e491916ad66be7e90e1b
@@ -19,9 +38,31 @@ entries:
     urls:
     - https://charts.darkedges.com/cmp-am-dj-5.5.0-ob.tgz
     version: 5.5.0-ob
+  fram:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-24T22:15:34.3491172+10:00"
+    description: A Helm chart for ForgeRock Access Manager
+    digest: 23353437391a5eb62103987e82f25de33631804b433679fdae357bbf41fcbd6b
+    home: https://github.com/darkedges/devspace-forgerock-quickstart
+    icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+    keywords:
+    - access manager
+    - forgerock
+    kubeVersion: '>=1.20.0-0'
+    maintainers:
+    - name: darkedges
+    name: fram
+    sources:
+    - https://github.com/darkedges/devspace-forgerock-quickstart/helm/fram
+    urls:
+    - https://charts.darkedges.com/fram-1.0.0.tgz
+    version: 1.0.0
   frcommon:
   - apiVersion: v1
-    created: 2018-09-19T07:49:53.5912736+10:00
+    created: "2022-09-24T22:15:34.3491172+10:00"
     description: A common ForgeRock chart. This contains utility template functions
       used by other charts.
     digest: b898fc16f751833fd3ba2dc3b8a539bcf5bd27a5abb1c203633d0d29b6feddf9
@@ -29,8 +70,101 @@ entries:
     urls:
     - https://charts.darkedges.com/frcommon-5.5.0-ob.tgz
     version: 5.5.0-ob
+  frds:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-24T22:15:34.3501702+10:00"
+    description: A Helm chart for ForgeRock Directory Services
+    digest: f770cff69ad591d3ca421f11cc1310461c041317cfcc466c57e707944bc474e9
+    home: https://github.com/darkedges/devspace-forgerock-quickstart
+    icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+    keywords:
+    - directory services
+    - forgerock
+    kubeVersion: '>=1.20.0-0'
+    maintainers:
+    - name: darkedges
+    name: frds
+    sources:
+    - https://github.com/darkedges/devspace-forgerock-quickstart/helm/frds
+    urls:
+    - https://charts.darkedges.com/frds-1.0.0.tgz
+    version: 1.0.0
+  frig:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-24T22:15:34.3506948+10:00"
+    description: A Helm chart for ForgeRock Identity Gateway
+    digest: c0f602da9e45509277f4df613fca70623662506e3fedb5a803c02cfbda9deed2
+    home: https://github.com/darkedges/devspace-forgerock-quickstart
+    icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+    keywords:
+    - identity gateway
+    - forgerock
+    kubeVersion: '>=1.20.0-0'
+    maintainers:
+    - name: darkedges
+    name: frig
+    sources:
+    - https://github.com/darkedges/devspace-forgerock-quickstart/helm/frig
+    urls:
+    - https://charts.darkedges.com/frig-1.0.0.tgz
+    version: 1.0.0
+  frim:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-24T22:15:34.3522769+10:00"
+    description: A Helm chart for ForgeRock Identity Manager
+    digest: fa3d884d9ab753d1acb1e06fef6c012e92aab830a440b50c04a3d73508928a12
+    home: https://github.com/darkedges/devspace-forgerock-quickstart
+    icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+    keywords:
+    - identity manager
+    - forgerock
+    kubeVersion: '>=1.20.0-0'
+    maintainers:
+    - name: darkedges
+    name: frim
+    sources:
+    - https://github.com/darkedges/devspace-forgerock-quickstart/helm/frim
+    urls:
+    - https://charts.darkedges.com/frim-1.0.0.tgz
+    version: 1.0.0
+  idmschema:
+  - annotations:
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-09-24T22:15:34.3528167+10:00"
+    description: A Helm chart for ForgeRock Identity Manager Schema Deployment
+    digest: 2c675b5a2de12ac7a6cc809aad3217b80b6d40d4fb25f3139e39ff63631d57b0
+    home: https://github.com/darkedges/devspace-forgerock-quickstart
+    icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+    keywords:
+    - identity manager
+    - forgerock
+    kubeVersion: '>=1.20.0-0'
+    maintainers:
+    - name: darkedges
+    name: idmschema
+    sources:
+    - https://github.com/darkedges/devspace-forgerock-quickstart/helm/idmschema
+    urls:
+    - https://charts.darkedges.com/idmschema-1.0.0.tgz
+    version: 1.0.0
   openam:
-  - created: 2018-09-19T07:49:53.5922344+10:00
+  - apiVersion: v1
+    created: "2022-09-24T22:15:34.3533393+10:00"
+    dependencies:
+    - name: frcommon
+      repository: file://../frcommon
+      version: 5.5.0-ob
     description: OpenAM runtime image - this does not do installation
     digest: 5cfff63399a35ccb7d3784eb4ae4227c08373c9e06388bd1113b0047d65cf65e
     name: openam
@@ -39,11 +173,11 @@ entries:
     version: 5.5.0-ob
   opendj:
   - apiVersion: v1
-    created: 2018-09-19T07:49:53.5932109+10:00
+    created: "2022-09-24T22:15:34.353861+10:00"
     description: Deploy a pair of OpenDJ servers replicated
     digest: bf90e1d85ca42872c927a32e179e9da7e944bacb5fe94b39c93fa12a8274d8d1
     name: opendj
     urls:
     - https://charts.darkedges.com/opendj-5.5.0-ob.tgz
     version: 5.5.0-ob
-generated: 2018-09-19T07:49:53.587356+10:00
+generated: "2022-09-24T22:15:34.3459692+10:00"

@@ -12,7 +12,7 @@ class Chart < OpenStruct
   end
 
   def self.all
-    @all ||= Dir["../forgeops/helm/**/Chart.yaml"].map { |source| new(source) }.select { |line| line.version == "5.5.0-ob"}
+    @all ||= Dir["../../forgerock/devspace-forgerock-quickstart/helm/**/Chart.yaml"].map { |source| new(source) }.select { |line| line.version == "1.0.0"}
   end
 
   def self.targets
@@ -34,8 +34,8 @@ desc "Build packaged helm charts"
 task package: Chart.targets
 
 rule ".tgz" => ->(target) { Chart.from_target(target) } do |t|
-  sh "cd ../forgeops/helm/#{t.source.name} && helm dependency build"
-  sh "helm package -d . ../forgeops/helm/#{t.source.name}"
+  sh "cd ../../forgerock/devspace-forgerock-quickstart/helm/#{t.source.name} && helm dependency build"
+  sh "helm package -d . ../../forgerock/devspace-forgerock-quickstart/helm/#{t.source.name}"
 end
 
 task index: "./index.yaml"
